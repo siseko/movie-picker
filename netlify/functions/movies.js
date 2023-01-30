@@ -2,6 +2,7 @@ const { JSDOM } = require("jsdom");
 
 exports.handler = async () => {
   const fetch = await import("node-fetch");
+  console.log('fetch', fetch)
   return fetch(
     "https://www.imdb.com/search/title/?groups=top_250&sort=user_rating"
   )
