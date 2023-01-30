@@ -1,7 +1,7 @@
-import fetch from "node-fetch";
-import { JSDOM } from "jsdom";
+const fetch = require("node-fetch");
+const { JSDOM } = require("jsdom");
 
-export const handler = async () => {
+exports.handler = async () => {
   return fetch(
     "https://www.imdb.com/search/title/?groups=top_250&sort=user_rating"
   )
