@@ -2,7 +2,6 @@ const { JSDOM } = require("jsdom");
 
 exports.handler = async () => {
   const { default: fetch } = await import("node-fetch");
-  console.log("fetch", fetch);
   return fetch(
     "https://www.imdb.com/search/title/?groups=top_250&sort=user_rating"
   )
@@ -25,7 +24,7 @@ exports.handler = async () => {
           );
         });
 
-      return { statusCode: 200, body: { movies } };
+      return { statusCode: 200, body: JSON.stringify({ movies }) };
     })
     .catch((err) => {
       return { statusCode: 500, body: String(err) };
