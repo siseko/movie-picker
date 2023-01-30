@@ -25,7 +25,7 @@ exports.handler = async () => {
           );
         });
 
-      return { statusCode: 200, body: movies };
+      return { statusCode: 200, body: { movies } };
     })
     .catch((err) => {
       return { statusCode: 500, body: String(err) };
